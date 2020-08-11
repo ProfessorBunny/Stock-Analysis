@@ -1,0 +1,40 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #060;
+}
+
+/*
+   * Formatting the header area
+   */
+
+header {
+	background-color: #dfb887;
+	height: 35px;
+	width: 100%;
+	opacity: .9;
+	margin-bottom: 10px;
+}
+
+header h1.logo {
+	margin: 0;
+	font-size: 1.7em;
+	color: #fff;
+	text-transform: uppercase;
+	float: left;
+}
+
+header h1.logo:hover {
+	color: red;
+	text-decoration: none;
+}
+
+/*
+   * Center the body content
+   */
+
+.container {
+	width: 1200px;
+	margin: 0 auto;
+}
