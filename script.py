@@ -2,6 +2,8 @@ from pandas_datareader import data
 import datetime
 from bokeh.plotting import figure
 from bokeh.io import output_file, show
+from bokeh.embed import components
+from bokeh.resources import CDN
 
 start_date = datetime.datetime(2015, 11, 1)
 end_date = datetime.datetime(2016, 3, 10)
@@ -37,5 +39,7 @@ p.rect(df.index[df.Status == "Increase"], df.Middle[df.Status == "Increase"],
        hours_12, df.Height[df.Status == "Increase"], fill_color="#CCFFFF", line_color="black")
 p.rect(df.index[df.Status == "Decrease"], df.Middle[df.Status == "Decrease"],
        hours_12, df.Height[df.Status == "Decrease"], fill_color="#FF3333", line_color="black")
-output_file("cs.html")
-show(p)
+
+script1, div1 = components(p)
+cdn_js = CDN.js_files[0]
+cdn_css = CDN.css_files[0]
